@@ -13,7 +13,7 @@ function AppTest(props) {
     let [pics , setPic ] = useState("flowers")
 
     useEffect(() => {        
-        let apiUrl = `https://pixabay.com/api/?key=15489555-318fcca1200a48f374a1ce3ea&q=${pics}&image_type=photo&pretty=true&fbclid=IwAR3sLeuuGT4Ec--NLUYau3iQpKYpqNFRgPiPwzRsoxC6CeP6PcXVBIcLsfE`;
+        let apiUrl = `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXA_KEY}&q=${pics}&image_type=photo&pretty=true&fbclid=IwAR3sLeuuGT4Ec--NLUYau3iQpKYpqNFRgPiPwzRsoxC6CeP6PcXVBIcLsfE`;
         doApi(apiUrl)
             .then(data => {
                 console.log(data.hits);
